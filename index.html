@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 Pixel Art Studio</h1>
+            <p>Click and drag to draw • Right-click to erase</p>
+        </header>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="colorPicker">Color:</label>
+                <input type="color" id="colorPicker" value="#000000">
+                <div class="color-presets">
+                    <button class="preset-color" data-color="#000000" style="background: #000000" title="Black"></button>
+                    <button class="preset-color" data-color="#FF0000" style="background: #FF0000" title="Red"></button>
+                    <button class="preset-color" data-color="#00FF00" style="background: #00FF00" title="Green"></button>
+                    <button class="preset-color" data-color="#0000FF" style="background: #0000FF" title="Blue"></button>
+                    <button class="preset-color" data-color="#FFFF00" style="background: #FFFF00" title="Yellow"></button>
+                    <button class="preset-color" data-color="#FF00FF" style="background: #FF00FF" title="Magenta"></button>
+                    <button class="preset-color" data-color="#00FFFF" style="background: #00FFFF" title="Cyan"></button>
+                    <button class="preset-color" data-color="#FFFFFF" style="background: #FFFFFF; border: 1px solid #ccc" title="White"></button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="brushSize">Brush Size:</label>
+                <select id="brushSize">
+                    <option value="1" selected>1x1</option>
+                    <option value="2">2x2</option>
+                    <option value="3">3x3</option>
+                    <option value="4">4x4</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="gridSize">Grid Size:</label>
+                <select id="gridSize">
+                    <option value="16">16x16</option>
+                    <option value="32" selected>32x32</option>
+                    <option value="48">48x48</option>
+                    <option value="64">64x64</option>
+                </select>
+            </div>
+
+            <div class="control-group tools">
+                <button id="fillBtn" class="tool-btn" title="Fill with current color">
+                    <span>🪣</span> Fill
+                </button>
+                <button id="clearBtn" class="tool-btn" title="Clear canvas">
+                    <span>🗑️</span> Clear
+                </button>
+                <button id="gridToggle" class="tool-btn active" title="Toggle grid lines">
+                    <span>⊞</span> Grid
+                </button>
+            </div>
+
+            <div class="control-group">
+                <button id="downloadBtn" class="tool-btn download-btn" title="Download as PNG">
+                    <span>💾</span> Download PNG
+                </button>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="pixelCanvas"></canvas>
+        </div>
+
+        <div class="info">
+            <span id="pixelInfo">Hover over canvas to see coordinates</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
