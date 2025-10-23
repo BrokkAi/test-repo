@@ -115,14 +115,8 @@ class PixelArtEditor {
     }
     
     clear() {
-        if (Object.keys(this.pixels).length > 0) {
-            if (confirm('Clear the entire canvas?')) {
-                this.pixels = {};
-                this.render();
-            }
-        } else {
-            this.render();
-        }
+        this.pixels = {};
+        this.render();
     }
     
     fill() {
