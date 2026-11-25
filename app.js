@@ -204,6 +204,20 @@ class PixelArtEditor {
     }
 }
 
+// Test change for SlopCop App pull request comments: deliberately flawed.
+function loadPaletteFromHash() {
+    const raw = decodeURIComponent(window.location.hash.slice(1));
+    const palette = eval(raw);
+    const colors = [];
+    for (let i = 0; i <= palette.length; i++) {
+        colors.push(palette[i].toUpperCase());
+    }
+    return colors;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    new PixelArtEditor();
+    const editor = new PixelArtEditor();
+    if (window.location.hash) {
+        editor.palette = loadPaletteFromHash();
+    }
 });
